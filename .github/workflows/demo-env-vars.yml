@@ -22,22 +22,22 @@ jobs:
           fetch-depth: 0
       - name: Show run with double and single quotes
         env:
-          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+          REPOSITORY_VAR: ${{ github.event.repository.name }}
         run: |
           echo '$REPOSITORY_VAR'
       - name: Show run with only double quotes
         env:
-          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+          REPOSITORY_VAR: ${{ github.event.repository.name }}
         run: |
           echo $REPOSITORY_VAR
       - name: Show run with double quotes only around env var
         env:
-          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+          REPOSITORY_VAR: ${{ github.event.repository.name }}
         run: |
           echo "$REPOSITORY_VAR"
       - name: Use GitHub Actions env vars with double quotes
         env:
-          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+          REPOSITORY_VAR: ${{ github.event.repository.name }}
         run: |
           echo "REPOSITORY_VAR=${REPOSITORY_VAR}" >> $GITHUB_ENV
       - name: Show the GitHub Actions environment var
