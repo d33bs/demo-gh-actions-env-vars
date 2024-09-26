@@ -24,12 +24,12 @@ jobs:
         env:
           REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
         run: |
-          "echo '$REPOSITORY_VAR'"
+          echo '$REPOSITORY_VAR'
       - name: Show run with only double quotes
         env:
           REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
         run: |
-          "echo $REPOSITORY_VAR"
+          echo $REPOSITORY_VAR
       - name: Show run with double quotes only around env var
         env:
           REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
